@@ -1,6 +1,4 @@
-﻿using YuleCoding.Code;
-
-namespace YuleCoding.Tests;
+﻿namespace YuleCoding.Tests;
 
 [TestFixture]
 internal class WhosPositiveTests

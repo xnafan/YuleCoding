@@ -1,8 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Diagnostics.Metrics;
-using System.Text;
-using YuleCoding.Code.HelperClasses;
+﻿using YuleCoding.Code.HelperClasses;
 
 namespace YuleCoding.Code;
 public class YuleMachine
@@ -50,6 +46,10 @@ public class YuleMachine
     {
         return WhatsThePriceOfChristmas(gifts) > maxBudget;
     }
+    public int HowFarHaveTheReinDeerTravelled(IEnumerable<Mood> distances)
+    {
+        return distances.Cast<int>().Sum();
+    }
     public string ChristmasCounting(int digit)
     {
         if (digit < 1 || digit > 24) { return "BAH, Humbug!"; }
@@ -66,7 +66,7 @@ public class YuleMachine
     {
       return giftsToSort.OrderBy(gift => gift.To).ThenBy(gift => gift.From);
     }
-    public int DaysTillChristmas()
+    public int DaysTillNextChristmas()
     {
         DateOnly today = DateOnly.FromDateTime(DateTime.Now);
         if (today.Month == 12 && today.Day == 24) { return 0; }
@@ -105,6 +105,4 @@ public class YuleMachine
 
         return secretSantaPairs;
     }
-
 }
-

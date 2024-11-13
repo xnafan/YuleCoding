@@ -1,7 +1,4 @@
-﻿using YuleCoding.Code;
-using YuleCoding.Code.HelperClasses;
-
-namespace YuleCoding.Tests;
+﻿namespace YuleCoding.Tests;
 
 [TestFixture]
 internal class IsChristmasTooExpensiveTests
