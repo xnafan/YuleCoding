@@ -38,6 +38,14 @@ public class YuleMachine
     {
         return numbers.Count(number => number > 0);
     }
+    public string FestiveMaker(string text)
+    {
+        return text.Replace(" ", "🎄");
+    }
+    public string EvenFestiverMaker(string text)
+    {
+        return text.Replace("rain", "snow").Replace("sad", "jolly").Replace("bill", "gift");
+    }
     public int WhatsThePriceOfChristmas(IEnumerable<Gift> gifts)
     {
         return gifts.Sum(gift => gift.Price);
