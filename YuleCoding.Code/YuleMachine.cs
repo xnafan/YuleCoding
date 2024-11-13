@@ -1,4 +1,5 @@
-﻿using YuleCoding.Code.HelperClasses;
+﻿using System.Text;
+using YuleCoding.Code.HelperClasses;
 
 namespace YuleCoding.Code;
 public class YuleMachine
@@ -46,13 +47,41 @@ public class YuleMachine
     {
         return text.Replace("rain", "snow").Replace("sad", "jolly").Replace("bill", "gift");
     }
+    public Dictionary<Person.NiceOrNaughty, List<Person>> NiceAndNaughtyLists(IEnumerable<Person> people)
+    {
+        Dictionary<Person.NiceOrNaughty, List<Person>> niceAndNaughtyLists = new();
+        niceAndNaughtyLists.Add(Person.NiceOrNaughty.Nice, people.Where(person => person.NiceOrNaughtyStatus == Person.NiceOrNaughty.Nice).ToList());
+        niceAndNaughtyLists.Add(Person.NiceOrNaughty.Naughty, people.Where(person => person.NiceOrNaughtyStatus == Person.NiceOrNaughty.Naughty).ToList());
+
+        return niceAndNaughtyLists;
+    }
     public int WhatsThePriceOfChristmas(IEnumerable<Gift> gifts)
     {
         return gifts.Sum(gift => gift.Price);
     }
+
     public bool IsChristmasTooExpensive(IEnumerable<Gift> gifts, int maxBudget)
     {
         return WhatsThePriceOfChristmas(gifts) > maxBudget;
+    }
+    public int CalculateSantaLetterNiceness(string letter)
+    {
+        letter = letter.ToLower();
+        int score = 0;
+        int numberOfPlease = letter.Split("please", StringSplitOptions.None).Length - 1;
+        int numberOfThankYou = letter.Split("thank you", StringSplitOptions.None).Length - 1;
+
+        score += numberOfPlease * 2;
+        score += numberOfThankYou * 3;
+        return score;
+
+    }
+    public int HowLongTimeToBakeCookies(IEnumerable<Recipe> recipes)
+    {
+        int timeToGetKitchenReadyForNextRecipe = (recipes.Count() - 1) * 10;
+        int timeToCleanUpKitchen = 30;
+        int timeToMakeCookies = recipes.Sum(recipe => recipe.TimeToMake);
+        return timeToMakeCookies + timeToGetKitchenReadyForNextRecipe + timeToCleanUpKitchen;
     }
     public int HowFarHaveTheReinDeerTravelled(IEnumerable<Mood> distances)
     {
@@ -70,9 +99,23 @@ public class YuleMachine
         if (divisibleByFive) { returnValue += "HoHo"; }
         return returnValue;
     }
+    public int CalculateAmountOfGiftWrappingPaperNecessary(int height, int width, int depth)
+    {
+        return 2 * (height * width + width * depth + depth * height);
+    }
     public IEnumerable<Gift> SortGiftsByToAndFrom(IEnumerable<Gift> giftsToSort)
     {
       return giftsToSort.OrderBy(gift => gift.To).ThenBy(gift => gift.From);
+    }
+    public IEnumerable<string> SortSantasReindeer(IEnumerable<string> reindeer)
+    {
+        var orderedReindeer = reindeer.OrderBy(reindeer => reindeer).ToList();
+        if(reindeer.Contains("Rudolph"))
+        {
+            orderedReindeer.Remove("Rudolph");
+            orderedReindeer.Insert(0, "Rudolph");
+        }
+        return orderedReindeer;
     }
     public int DaysTillNextChristmas()
     {
@@ -95,6 +138,24 @@ public class YuleMachine
 
         return equalNumberOfEastAndWest && equalNumberOfNorthAndSouth;
     }
+
+    public IEnumerable<string> DrawChristmasRaffleWinners(IEnumerable<string> participants, int numberOfWinners)
+    {
+        if (participants.Count() < 1) { throw new ArgumentException("Must be at least one participant!"); }
+        if (numberOfWinners < 1) { throw new ArgumentException("Must be at least one winner!"); }
+        if (participants.Count() < numberOfWinners) { throw new ArgumentException("Not enough participants for the number of winners!"); }
+
+        List<string> winners = new();
+        while (winners.Count < numberOfWinners)
+        {
+            string winner = participants.ElementAt(Random.Shared.Next(participants.Count()));
+            if (!winners.Contains(winner))
+            {
+                winners.Add(winner);
+            }
+        }
+        return winners;
+    }
     public Dictionary<string, string> CreateSecretSantaList(IEnumerable<string> participantNames)
     {
         if (participantNames.Count() < 2) { throw new ArgumentException("Must be at least two people in the list!"); }
@@ -112,5 +173,19 @@ public class YuleMachine
         secretSantaPairs[from] = to;
 
         return secretSantaPairs;
+    }
+    public string CreateChristmasTree(int height)
+    {
+        if (height < 1) { throw new ArgumentException("Height must be at least 1"); }
+        StringBuilder christmasTree = new();
+        for (int i = 1; i <= height; i++)
+        {
+            christmasTree.Append(new string(' ', height - i));
+            christmasTree.Append(new string('*', i * 2 - 1));
+            christmasTree.Append('\n');
+        }
+        christmasTree.Append(new string(' ', height - 1));
+        christmasTree.Append("|\n");
+        return christmasTree.ToString();
     }
 }

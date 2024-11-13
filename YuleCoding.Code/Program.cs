@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            
+
+            YuleMachine yuleMachine = new();
+            Console.WriteLine(yuleMachine.CreateChristmasTree(1));
+
         }
     }
 }
