@@ -1,7 +1,7 @@
 ﻿namespace YuleCoding.Tests;
 
 [TestFixture]
-public class IsItChristmasYetTests
+public class IsItChristmasEveYetTests
 {
     [Test]
     public void IsItChristmasYet_Before24th_ReturnsNotYet()
@@ -10,9 +10,9 @@ public class IsItChristmasYetTests
         var yuleMachine = new YuleMachine();
 
         // Act & Assert
-        Assert.That(yuleMachine.IsItChristmasYet(1), Is.EqualTo("Not yet!"));
-        Assert.That(yuleMachine.IsItChristmasYet(10), Is.EqualTo("Not yet!"));
-        Assert.That(yuleMachine.IsItChristmasYet(22), Is.EqualTo("Not yet!"));
+        Assert.That(yuleMachine.IsItChristmasEveYet(1), Is.EqualTo("Not yet!"));
+        Assert.That(yuleMachine.IsItChristmasEveYet(10), Is.EqualTo("Not yet!"));
+        Assert.That(yuleMachine.IsItChristmasEveYet(22), Is.EqualTo("Not yet!"));
     }
 
     [Test]
@@ -22,9 +22,9 @@ public class IsItChristmasYetTests
         var yuleMachine = new YuleMachine();
 
         // Act
-        string result = yuleMachine.IsItChristmasYet(24);
+        string result = yuleMachine.IsItChristmasEveYet(24);
 
-        // Assert
+        // Assert   
         Assert.That(result, Is.EqualTo("Yes!"));
     }
 
@@ -35,7 +35,7 @@ public class IsItChristmasYetTests
         var yuleMachine = new YuleMachine();
 
         // Act & Assert
-        Assert.That(yuleMachine.IsItChristmasYet(25), Is.EqualTo("It's over!"));
-        Assert.That(yuleMachine.IsItChristmasYet(31), Is.EqualTo("It's over!"));
+        Assert.That(yuleMachine.IsItChristmasEveYet(25), Is.EqualTo("It's over!"));
+        Assert.That(yuleMachine.IsItChristmasEveYet(31), Is.EqualTo("It's over!"));
     }
 }

@@ -3,7 +3,7 @@ using YuleCoding.Code.HelperClasses;
 namespace YuleCoding.Code;
 public class YuleMachineSolved
 {
-    public bool IsItChristmasDay(int dayOfDecember)
+    public bool IsItChristmasEve(int dayOfDecember)
     {
         return dayOfDecember == 24;
         throw new NotImplementedException();
@@ -12,7 +12,7 @@ public class YuleMachineSolved
     {
         return "Merry Christmas, " + nameToGreet;
     }
-    public string IsItChristmasYet(int dayOfDecember)
+    public string IsItChristmasEveYet(int dayOfDecember)
     {
         switch(dayOfDecember)
         {
@@ -59,6 +59,7 @@ public class YuleMachineSolved
         return gifts.Sum(gift => gift.Price);
     }
 
+
     public bool IsChristmasTooExpensive(IEnumerable<Gift> gifts, int maxBudget)
     {
         return WhatsThePriceOfChristmas(gifts) > maxBudget;
@@ -104,7 +105,7 @@ public class YuleMachineSolved
         }
         return orderedReindeer;
     }
-    public int DaysTillNextChristmas()
+    public int DaysTillNextChristmasEve()
     {
         DateOnly today = DateOnly.FromDateTime(DateTime.Now);
         if (today.Month == 12 && today.Day == 24) { return 0; }
@@ -142,6 +143,7 @@ public class YuleMachineSolved
         }
         return winners;
     }
+
 
     public string ChristmasCounting(int digit)
     {

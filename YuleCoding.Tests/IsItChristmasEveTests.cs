@@ -1,7 +1,7 @@
 ﻿namespace YuleCoding.Tests;
 
 [TestFixture]
-public class IsItChristmasDayTests
+public class IsItChristmasEveTests
 {
     [Test]
     public void IsItChristmasDay_Before24th_ReturnsFalse()
@@ -10,7 +10,7 @@ public class IsItChristmasDayTests
         YuleMachine _yuleMachine = new();
 
         // Act
-        bool isItChristmas = _yuleMachine.IsItChristmasDay(10);
+        bool isItChristmas = _yuleMachine.IsItChristmasEve(10);
 
         // Assert
         Assert.IsFalse(isItChristmas, "It isn't Christmas until the 24th!");
@@ -23,7 +23,7 @@ public class IsItChristmasDayTests
         YuleMachine _yuleMachine = new();
 
         // Act
-        bool isItChristmas = _yuleMachine.IsItChristmasDay(31);
+        bool isItChristmas = _yuleMachine.IsItChristmasEve(31);
 
         // Assert
         Assert.IsFalse(isItChristmas, "It isn't Christmas after the 24th!");
@@ -36,7 +36,7 @@ public class IsItChristmasDayTests
         YuleMachine _yuleMachine = new();
 
         // Act
-        bool isItChristmas = _yuleMachine.IsItChristmasDay(24);
+        bool isItChristmas = _yuleMachine.IsItChristmasEve(24);
 
         // Assert
         Assert.IsTrue(isItChristmas, "It is the 24th, so it should be Christmas!");

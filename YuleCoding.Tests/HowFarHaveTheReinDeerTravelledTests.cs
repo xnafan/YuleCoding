@@ -17,4 +17,16 @@ internal class HowFarHaveTheReinDeerTravelledTests
         // Assert
         Assert.That(result, Is.EqualTo(7));
     }
+
+    [Test]
+    public void HowFarHaveTheReinDeerTravelled_WhenGivenEmptyDistances_ReturnsZero()
+    {
+        // Arrange
+        var yuleMachine = new YuleMachine();
+        var distances = new List<Mood>();
+        // Act
+        var result = yuleMachine.HowFarHaveTheReinDeerTravelled(distances);
+        // Assert
+        Assert.That(result, Is.EqualTo(0));
+    }
 }

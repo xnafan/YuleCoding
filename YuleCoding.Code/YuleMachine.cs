@@ -3,7 +3,7 @@
 namespace YuleCoding.Code;
 public class YuleMachine
 {
-    public bool IsItChristmasDay(int dayOfDecember)
+    public bool IsItChristmasEve(int dayOfDecember)
     {
         throw new NotImplementedException();
     }
@@ -44,6 +44,7 @@ public class YuleMachine
         throw new NotImplementedException();
     }
 
+
     public bool IsChristmasTooExpensive(IEnumerable<Gift> gifts, int maxBudget)
     {
         throw new NotImplementedException();
@@ -72,11 +73,11 @@ public class YuleMachine
     {
         throw new NotImplementedException();
     }
-    public int DaysTillNextChristmas()
+    public int DaysTillNextChristmasEve()
     {
         throw new NotImplementedException();
     }
-    public bool ValidateSantasRouteReturnsToStart(IEnumerable<char>directions)
+    public bool ValidateSantasRouteReturnsToStart(IEnumerable<char> directions)
     {
         throw new NotImplementedException();
     }
@@ -84,6 +85,7 @@ public class YuleMachine
     {
         throw new NotImplementedException();
     }
+
 
     public string ChristmasCounting(int digit)
     {

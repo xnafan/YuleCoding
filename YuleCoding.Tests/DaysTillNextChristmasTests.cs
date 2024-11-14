@@ -9,7 +9,7 @@ internal class DaysTillNextChristmasTests
         var yuleMachine = new YuleMachine();
 
         // Act
-        int result = yuleMachine.DaysTillNextChristmas();
+        int result = yuleMachine.DaysTillNextChristmasEve();
 
         // Assert
         int expected = DaysTillChristmas();
