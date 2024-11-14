@@ -11,7 +11,7 @@ Along with [a class with 24 empty methods](https://github.com/xnafan/YuleCoding/
 There is a [Word document](https://github.com/xnafan/YuleCoding/blob/master/The%20YuleMachine.docx) in the repository which contains further description, hints and guidelines.
 
 ### Note
-The exercises are using the 24th of december (Christmas Eve) as the big day in the Christmas season, as I am from Denmark 🇩🇰. You can adapt this to the 25th (Christmas Day) if that's what you're used to 😊
+The exercises are using the 24th of december (Christmas Eve) as the big day in the Christmas season, as I am from Denmark. You can adapt this to the 25th of December (Christmas Day) if that's what you're used to 😊
 
 ### 🎅🎁🎄 Have fun, and Merry Christmas / Happy Holidays! 🎅🎁🎄
 
