@@ -6,7 +6,6 @@ public class YuleMachineSolved
     public bool IsItChristmasEve(int dayOfDecember)
     {
         return dayOfDecember == 24;
-        throw new NotImplementedException();
     }
     public string ChristmasGreeting(string nameToGreet)
     {
