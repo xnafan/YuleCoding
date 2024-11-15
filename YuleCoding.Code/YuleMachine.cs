@@ -1,5 +1,4 @@
 ﻿using YuleCoding.Code.HelperClasses;
-
 namespace YuleCoding.Code;
 public class YuleMachine
 {
@@ -11,7 +10,7 @@ public class YuleMachine
     {
         throw new NotImplementedException();
     }
-    public string IsItChristmasYet(int dayOfDecember)
+    public string IsItChristmasEveYet(int dayOfDecember)
     {
         throw new NotImplementedException();
     }
