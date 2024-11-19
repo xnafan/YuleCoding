@@ -10,7 +10,7 @@ public class IsItChristmasEveTests
         YuleMachine _yuleMachine = new();
 
         // Act
-        bool isItChristmas = _yuleMachine.IsItChristmasEve(10);
+        bool isItChristmas = _yuleMachine.IsItChristmasEve(23);
 
         // Assert
         Assert.IsFalse(isItChristmas, "It isn't Christmas until the 24th!");
@@ -23,7 +23,7 @@ public class IsItChristmasEveTests
         YuleMachine _yuleMachine = new();
 
         // Act
-        bool isItChristmas = _yuleMachine.IsItChristmasEve(31);
+        bool isItChristmas = _yuleMachine.IsItChristmasEve(25);
 
         // Assert
         Assert.IsFalse(isItChristmas, "It isn't Christmas after the 24th!");

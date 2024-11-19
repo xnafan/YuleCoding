@@ -15,7 +15,7 @@ public class YuleMachineSolved
     {
         switch(dayOfDecember)
         {
-            case < 23:
+            case < 24:
                 return "Not yet!";
             case 24:
                 return "Yes!";
